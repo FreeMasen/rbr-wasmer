@@ -1,0 +1,12 @@
+[book]
+title = "Rust Belt Rust Wasmer Workshop"
+author = "Robert Masen (@FreeMasen)"
+description = "Workshop for building a Rust+Wasm Plugin System"
+language = "en"
+
+[build]
+dir = "docs"
+create-missing = true
+
+[output.html.playpen]
+editable = true
