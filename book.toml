@@ -5,7 +5,7 @@ description = "Workshop for building a Rust+Wasm Plugin System"
 language = "en"
 
 [build]
-dir = "docs"
+build-dir = "docs"
 create-missing = true
 
 [output.html.playpen]
