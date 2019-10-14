@@ -150,6 +150,26 @@
 <li>Bytecode</li>
 <li>Needs VM</li>
 </ul>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[no_mangle]
+pub fn double(n: u32) -&gt; u32 {
+    n * 2
+}
+#}</code></pre></pre>
+<pre><code class="language-wat">(module
+  (type $t0 (func (param i32) (result i32)))
+  (func $double (export &quot;double&quot;) (type $t0) (param $p0 i32) (result i32)
+    (i32.shl
+      (local.get $p0)
+      (i32.const 1)))
+  (table $T0 1 1 funcref)
+  (memory $memory (export &quot;memory&quot;) 16)
+  (global $g0 (mut i32) (i32.const 1048576))
+  (global $__data_end (export &quot;__data_end&quot;) i32 (i32.const 1048576))
+  (global $__heap_base (export &quot;__heap_base&quot;) i32 (i32.const 1048576)))
+</code></pre>
 
                     </main>
 
