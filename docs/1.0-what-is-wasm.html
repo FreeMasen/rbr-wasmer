@@ -158,7 +158,7 @@ pub fn double(n: u32) -&gt; u32 {
     n * 2
 }
 #}</code></pre></pre>
-<pre><code class="language-wat">(module
+<pre><code class="language-scheme">(module
   (type $t0 (func (param i32) (result i32)))
   (func $double (export &quot;double&quot;) (type $t0) (param $p0 i32) (result i32)
     (i32.shl
@@ -208,6 +208,21 @@ pub fn double(n: u32) -&gt; u32 {
 
         </div>
 
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         
 
         
