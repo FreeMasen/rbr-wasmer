@@ -224,11 +224,12 @@ pub fn double(n: u32) -&gt; u32 {
 <a class="header" href="#simple-plugin" id="simple-plugin"><h1>Simple Plugin</h1></a>
 <a class="header" href="#code" id="code"><h2>Code!</h2></a>
 <a class="header" href="#simple-plugin-runner" id="simple-plugin-runner"><h1>Simple Plugin Runner</h1></a>
+<a class="header" href="#code-1" id="code-1"><h2>Code!</h2></a>
 <a class="header" href="#work-arounds" id="work-arounds"><h1>Work Arounds</h1></a>
 <ul>
-<li>Only Knows Numbers
+<li>Remember WASM Only Knows Numbers
 <ul>
-<li>How could we pass/return a String</li>
+<li>How could we pass/return a String?</li>
 </ul>
 </li>
 </ul>
@@ -248,13 +249,14 @@ let wi_len = vec![0,0,0,0,6,100,111,117,98 ,108,101];
 let double = vec![0,0,0,0,12,100,111,117,98 ,108,101,100,111,117,98 ,108,101]
 //                [ 12u32 ] , d , o , u , b , l , e , d , o , u , b , l , e
 #}</code></pre></pre>
-<a class="header" href="#code-1" id="code-1"><h2>Code!</h2></a>
+<a class="header" href="#code-2" id="code-2"><h2>Code!</h2></a>
 <blockquote>
 <p>with a little unsafe</p>
 </blockquote>
 <a class="header" href="#runner-strings" id="runner-strings"><h1>Runner Strings</h1></a>
-<a class="header" href="#code-2" id="code-2"><h1>Code!</h1></a>
+<a class="header" href="#code-3" id="code-3"><h1>Code!</h1></a>
 <a class="header" href="#error-feedback" id="error-feedback"><h1>Error Feedback</h1></a>
+<a class="header" href="#but-what-if-this-goes-wrong" id="but-what-if-this-goes-wrong"><h2>But what if this goes wrong?</h2></a>
 <ul>
 <li>Import a function from the host
 <ul>
@@ -268,11 +270,17 @@ let double = vec![0,0,0,0,12,100,111,117,98 ,108,101,100,111,117,98 ,108,101]
 <li><code>TokenStreams</code> to <code>TokenStreams</code></li>
 </ul>
 <a class="header" href="#move-the-scary-bits" id="move-the-scary-bits"><h1>Move the scary bits</h1></a>
+<a class="header" href="#code-4" id="code-4"><h2>Code!</h2></a>
 <a class="header" href="#potental" id="potental"><h1>Potental</h1></a>
 <ul>
-<li>Bincode</li>
-<li>Cbor</li>
+<li>What if we wanted to work with even more complicated data?</li>
+<li>Could we use a binary serialization format?
+<ul>
+<li><strong>Bincode</strong></li>
+<li>cbor</li>
 <li>msg-pack</li>
+</ul>
+</li>
 </ul>
 
                     </main>
