@@ -3,11 +3,11 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Work Arounds - Rust Belt Rust Wasmer Workshop</title>
+        <title>Work Arounds - n</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Workshop for building a Rust+Wasm Plugin System">
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="0.0-overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li><a href="1.0-what-is-wasm.html"><strong aria-hidden="true">2.</strong> What Is Wasm</a></li><li><a href="2.0-wasmer.html"><strong aria-hidden="true">3.</strong> Wasmer</a></li><li><ol class="section"><li><a href="2.1-requirements.html"><strong aria-hidden="true">3.1.</strong> Requirements</a></li></ol></li><li><a href="3.0-limitations.html"><strong aria-hidden="true">4.</strong> Wasm's Limitations</a></li><li><ol class="section"><li><a href="3.1-simple.html"><strong aria-hidden="true">4.1.</strong> Simple Plugin</a></li><li><a href="3.2-simple-runner.html"><strong aria-hidden="true">4.2.</strong> Simple Plugin Runner</a></li></ol></li><li><a href="4.0-work-arounds.html" class="active"><strong aria-hidden="true">5.</strong> Work Arounds</a></li><li><ol class="section"><li><a href="4.1-plugin-strings.html"><strong aria-hidden="true">5.1.</strong> Plugin Strings</a></li><li><a href="4.2-errors.html"><strong aria-hidden="true">5.2.</strong> Error Feedback</a></li><li><a href="4.3-runner-strings.html"><strong aria-hidden="true">5.3.</strong> Runner Strings</a></li><li><a href="4.4-binary-serialization.html"><strong aria-hidden="true">5.4.</strong> Potental</a></li></ol></li><li><a href="5.0-proc-macro.html"><strong aria-hidden="true">6.</strong> Proc Macro</a></li><li><ol class="section"><li><a href="5.1-scary.html"><strong aria-hidden="true">6.1.</strong> Move the scary bits</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="0.0-overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li><a href="1.0-what-is-wasm.html"><strong aria-hidden="true">2.</strong> What Is Wasm</a></li><li><a href="2.0-wasmer.html"><strong aria-hidden="true">3.</strong> Wasmer</a></li><li><ol class="section"><li><a href="2.1-requirements.html"><strong aria-hidden="true">3.1.</strong> Requirements</a></li></ol></li><li><a href="3.0-limitations.html"><strong aria-hidden="true">4.</strong> Wasm's Limitations</a></li><li><ol class="section"><li><a href="3.1-simple.html"><strong aria-hidden="true">4.1.</strong> Simple Plugin</a></li><li><a href="3.2-simple-runner.html"><strong aria-hidden="true">4.2.</strong> Simple Plugin Runner</a></li></ol></li><li><a href="4.0-work-arounds.html" class="active"><strong aria-hidden="true">5.</strong> Work Arounds</a></li><li><ol class="section"><li><a href="4.1-plugin-strings.html"><strong aria-hidden="true">5.1.</strong> Plugin Strings</a></li><li><a href="4.2-runner-strings.html"><strong aria-hidden="true">5.2.</strong> Runner Strings</a></li><li><a href="4.3-errors.html"><strong aria-hidden="true">5.3.</strong> Error Feedback</a></li></ol></li><li><a href="5.0-proc-macro.html"><strong aria-hidden="true">6.</strong> Proc Macro</a></li><li><ol class="section"><li><a href="5.1-scary.html"><strong aria-hidden="true">6.1.</strong> Move the scary bits</a></li></ol></li><li><a href="6.0-binary-serialization.html"><strong aria-hidden="true">7.</strong> Even More Complicated</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -110,7 +110,7 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Rust Belt Rust Wasmer Workshop</h1>
+                        <h1 class="menu-title">n</h1>
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -145,11 +145,11 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#work-arounds" id="work-arounds">Work Arounds</a></h1>
+                        <a class="header" href="#work-arounds" id="work-arounds"><h1>Work Arounds</h1></a>
 <ul>
-<li>Only Knows Numbers
+<li>Remember WASM Only Knows Numbers
 <ul>
-<li>How could we pass/return a String</li>
+<li>How could we pass/return a String?</li>
 </ul>
 </li>
 </ul>
@@ -192,30 +192,9 @@
         </div>
 
         
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3001");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload(true); // force reload from server (not from cache)
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
-        
 
         
 
-        
-        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
         
 
         

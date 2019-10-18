@@ -3,11 +3,11 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Plugin Strings - Rust Belt Rust Wasmer Workshop</title>
+        <title>Plugin Strings - n</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Workshop for building a Rust+Wasm Plugin System">
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="0.0-overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li><a href="1.0-what-is-wasm.html"><strong aria-hidden="true">2.</strong> What Is Wasm</a></li><li><a href="2.0-wasmer.html"><strong aria-hidden="true">3.</strong> Wasmer</a></li><li><ol class="section"><li><a href="2.1-requirements.html"><strong aria-hidden="true">3.1.</strong> Requirements</a></li></ol></li><li><a href="3.0-limitations.html"><strong aria-hidden="true">4.</strong> Wasm's Limitations</a></li><li><ol class="section"><li><a href="3.1-simple.html"><strong aria-hidden="true">4.1.</strong> Simple Plugin</a></li><li><a href="3.2-simple-runner.html"><strong aria-hidden="true">4.2.</strong> Simple Plugin Runner</a></li></ol></li><li><a href="4.0-work-arounds.html"><strong aria-hidden="true">5.</strong> Work Arounds</a></li><li><ol class="section"><li><a href="4.1-plugin-strings.html" class="active"><strong aria-hidden="true">5.1.</strong> Plugin Strings</a></li><li><a href="4.2-errors.html"><strong aria-hidden="true">5.2.</strong> Error Feedback</a></li><li><a href="4.3-runner-strings.html"><strong aria-hidden="true">5.3.</strong> Runner Strings</a></li><li><a href="4.4-binary-serialization.html"><strong aria-hidden="true">5.4.</strong> Potental</a></li></ol></li><li><a href="5.0-proc-macro.html"><strong aria-hidden="true">6.</strong> Proc Macro</a></li><li><ol class="section"><li><a href="5.1-scary.html"><strong aria-hidden="true">6.1.</strong> Move the scary bits</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="0.0-overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li><a href="1.0-what-is-wasm.html"><strong aria-hidden="true">2.</strong> What Is Wasm</a></li><li><a href="2.0-wasmer.html"><strong aria-hidden="true">3.</strong> Wasmer</a></li><li><ol class="section"><li><a href="2.1-requirements.html"><strong aria-hidden="true">3.1.</strong> Requirements</a></li></ol></li><li><a href="3.0-limitations.html"><strong aria-hidden="true">4.</strong> Wasm's Limitations</a></li><li><ol class="section"><li><a href="3.1-simple.html"><strong aria-hidden="true">4.1.</strong> Simple Plugin</a></li><li><a href="3.2-simple-runner.html"><strong aria-hidden="true">4.2.</strong> Simple Plugin Runner</a></li></ol></li><li><a href="4.0-work-arounds.html"><strong aria-hidden="true">5.</strong> Work Arounds</a></li><li><ol class="section"><li><a href="4.1-plugin-strings.html" class="active"><strong aria-hidden="true">5.1.</strong> Plugin Strings</a></li><li><a href="4.2-runner-strings.html"><strong aria-hidden="true">5.2.</strong> Runner Strings</a></li><li><a href="4.3-errors.html"><strong aria-hidden="true">5.3.</strong> Error Feedback</a></li></ol></li><li><a href="5.0-proc-macro.html"><strong aria-hidden="true">6.</strong> Proc Macro</a></li><li><ol class="section"><li><a href="5.1-scary.html"><strong aria-hidden="true">6.1.</strong> Move the scary bits</a></li></ol></li><li><a href="6.0-binary-serialization.html"><strong aria-hidden="true">7.</strong> Even More Complicated</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -110,7 +110,7 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Rust Belt Rust Wasmer Workshop</h1>
+                        <h1 class="menu-title">n</h1>
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -145,11 +145,26 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#plugin-strings" id="plugin-strings">Plugin Strings</a></h1>
-<h2><a class="header" href="#memory" id="memory">Memory</a></h2>
-<table><thead><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr></thead><tbody>
-<tr><td>®</td><td>0</td><td>0</td><td>0</td><td>0</td><td>d</td><td>o</td><td>u</td><td>b</td><td>l</td><td>e</td></tr>
+                        <a class="header" href="#plugin-strings" id="plugin-strings"><h1>Plugin Strings</h1></a>
+<a class="header" href="#memory" id="memory"><h2>Memory</h2></a>
+<table><thead><tr><th> 0 </th><th> 1 </th><th> 2 </th><th> 3 </th><th> 4 </th><th> 5 </th><th> 6 </th><th> 7 </th><th> 8 </th><th> 9 </th><th> 10 </th></tr></thead><tbody>
+<tr><td> ® </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> d </td><td> o </td><td> u </td><td> b </td><td> l </td><td> e  </td></tr>
 </tbody></table>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+//                0,1,2,3,4, 5 , 6 , 7 , 8 , 9 , 10
+let memory = vec![0,0,0,0,0,100,111,117,98 ,108,101];
+//                ®,0,0.0.0, d , o , u , b , l , e
+let wi_len = vec![0,0,0,0,6,100,111,117,98 ,108,101];
+//                 [ 6u32 ], d , o , u , b , l , e
+let double = vec![0,0,0,0,12,100,111,117,98 ,108,101,100,111,117,98 ,108,101]
+//                [ 12u32 ] , d , o , u , b , l , e , d , o , u , b , l , e
+#}</code></pre></pre>
+<a class="header" href="#code" id="code"><h2>Code!</h2></a>
+<blockquote>
+<p>with a little unsafe</p>
+</blockquote>
 
                     </main>
 
@@ -162,7 +177,7 @@
                         
 
                         
-                            <a rel="next" href="4.2-errors.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="4.2-runner-strings.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -180,7 +195,7 @@
                 
 
                 
-                    <a href="4.2-errors.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="4.2-runner-strings.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -189,30 +204,9 @@
         </div>
 
         
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3001");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload(true); // force reload from server (not from cache)
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
-        
 
         
 
-        
-        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
         
 
         
